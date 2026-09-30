@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achados IF — Recuperação de Pertences</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+    <!--
+      SPRITE DE ÍCONES
+      Em vez de repetir o mesmo <svg> 20 vezes, declaramos cada desenho UMA vez
+      dentro de <symbol> e chamamos com <use href="#id">. O sprite fica oculto.
+    -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></symbol>
+        <symbol id="i-casa" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.8V20h14V9.8"/></symbol>
+        <symbol id="i-caixa" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></symbol>
+        <symbol id="i-mais" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></symbol>
+        <symbol id="i-mais-simples" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+        <symbol id="i-usuario" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5"/></symbol>
+        <symbol id="i-sair" viewBox="0 0 24 24"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><polyline points="9 16 13 12 9 8"/><line x1="13" y1="12" x2="3" y2="12"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8.2 12.3 11 15 16 9.5"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/></symbol>
+        <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></symbol>
+        <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><line x1="3.5" y1="10" x2="20.5" y2="10"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></symbol>
+        <symbol id="i-predio" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8.5" y1="7.5" x2="8.5" y2="7.6"/><line x1="15.5" y1="7.5" x2="15.5" y2="7.6"/><line x1="8.5" y1="12" x2="8.5" y2="12.1"/><line x1="15.5" y1="12" x2="15.5" y2="12.1"/><path d="M10.5 21v-4h3v4"/></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><line x1="12" y1="7.8" x2="12" y2="7.9"/></symbol>
+        <symbol id="i-seta" viewBox="0 0 24 24"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13.5 6.5 19.5 12 13.5 17.5"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></symbol>
+        <symbol id="i-recarregar" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><polyline points="20 4 20 9 15 9"/></symbol>
+        <symbol id="i-capelo" viewBox="0 0 24 24"><path d="M2.5 9 12 5l9.5 4L12 13 2.5 9z"/><path d="M6.5 11v4.5c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V11"/></symbol>
+    </svg>
+
+
+    <!-- ===================== CABEÇALHO ===================== -->
+    <header class="cabecalho">
+        <div class="container cabecalho__interno">
+
+            <a class="marca" href="inicio.html">
+                <span class="marca__icone"><svg><use href="#i-lupa"/></svg></span>
+                <span class="marca__texto">
+                    <strong class="marca__nome">Achados IF</strong>
+                    <small class="marca__linha">REDE FEDERAL DE EDUCAÇÃO</small>
+                </span>
+            </a>
+
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a class="navegacao__item navegacao__item--ativo" href="inicio.html" aria-current="page">
+                    <svg><use href="#i-casa"/></svg> Início
+                </a>
+                <a class="navegacao__item" href="em-branco.html">
+                    <svg><use href="#i-caixa"/></svg> Meus itens
+                </a>
+                <a class="navegacao__item" href="em-branco.html">
+                    <svg><use href="#i-mais"/></svg> Cadastrar item
+                </a>
+            </nav>
+
+            <div class="usuario">
+                <a class="usuario__chip" href="em-branco.html">
+                    <svg><use href="#i-usuario"/></svg>
+                    <span class="usuario__dados">
+                        <strong>Campus Central</strong>
+                        <small>Aluno</small>
+                    </span>
+                </a>
+                <a class="usuario__sair" href="login.html" aria-label="Sair da conta">
+                    <svg><use href="#i-sair"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <!-- ===================== HERO + BUSCA + FILTROS ===================== -->
+        <section class="hero">
+            <div class="container">
+
+                <p class="selo">
+                    <svg><use href="#i-check"/></svg> Central de Custódia e Devolução Acadêmica
+                </p>
+
+                <div class="hero__topo">
+                    <div class="hero__texto">
+                        <h1 class="hero__titulo">Recuperação de Pertences</h1>
+                        <p class="hero__descricao">
+                            Consulte a lista institucional de bens perdidos ou encontrados em todos os blocos,
+                            auditórios e laboratórios do Instituto Federal.
+                        </p>
+                    </div>
+
+                    <p class="etiqueta-horario">
+                        <svg><use href="#i-relogio"/></svg> Central: Seg a Sex, 08h às 20h
+                    </p>
+                </div>
+
+                <!-- Formulário: <form> semântico, não uma div com aparência de busca -->
+                <form class="busca" role="search">
+                    <svg class="busca__lupa"><use href="#i-lupa"/></svg>
+                    <label class="sr-apenas" for="campo-busca">Buscar item</label>
+                    <input class="busca__campo" id="campo-busca" type="search"
+                           placeholder="Buscar item por nome, descrição ou local...">
+                    <button class="botao botao--primario busca__botao" type="submit">
+                        Buscar <svg><use href="#i-seta"/></svg>
+                    </button>
+                </form>
+
+                <div class="filtros">
+                    <span class="filtros__rotulo">Status:</span>
+
+                    <div class="filtros__grupo">
+                        <button class="chip chip--ativo" type="button">Todos</button>
+                        <button class="chip" type="button">Perdidos</button>
+                        <button class="chip" type="button">Encontrados</button>
+                    </div>
+
+                    <span class="filtros__separador" aria-hidden="true"></span>
+
+                    <div class="filtros__grupo">
+                        <button class="chip chip--neutro-ativo" type="button">Todas categorias</button>
+                        <button class="chip" type="button">Eletrônicos</button>
+                        <button class="chip" type="button">Documentos</button>
+                        <button class="chip" type="button">Roupas</button>
+                        <button class="chip" type="button">Materiais escolares</button>
+                        <button class="chip" type="button">Outros</button>
+                    </div>
+
+                    <p class="filtros__contador">
+                        <svg><use href="#i-predio"/></svg> 38 itens catalogados no campus
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== CATÁLOGO ===================== -->
+        <section class="catalogo">
+            <div class="container">
+
+                <h2 class="sr-apenas">Itens do catálogo</h2>
+
+                <!-- A GRADE: todos os cards de uma linha recebem a mesma altura -->
+                <div class="grade-itens" id="grade">
+
+                    <!-- CARD 1 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Calculadora científica Casio sobre uma mesa de estudo">🧮</span>
+                            <span class="tag tag--encontrado"><svg><use href="#i-check"/></svg> Encontrado</span>
+                            <span class="tag tag--categoria">Eletrônicos</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Calculadora Científica Casio</h3>
+                            <p class="card__descricao">Aparelho preto com tampa protetora e adesivo pequeno do curso de...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Bloco B, Sala 12</li>
+                                    <li><svg><use href="#i-relogio"/></svg> Encontrado hoje, 09:30</li>
+                                </ul>
+                                <a class="botao botao--acao" href="em-branco.html">Reivindicar item <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Mochila preta encostada em um banco do corredor">🎒</span>
+                            <span class="tag tag--perdido"><svg><use href="#i-lupa"/></svg> Perdido</span>
+                            <span class="tag tag--categoria">Outros</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Mochila preta Dell</h3>
+                            <p class="card__descricao">Contém cadernos pautados do 4º período e um estojo azul marinho...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Laboratório de Informática 3</li>
+                                    <li><svg><use href="#i-calendario"/></svg> Perdido em 24/10/2024</li>
+                                </ul>
+                                <a class="botao botao--acao botao--acao-suave" href="em-branco.html">Ver detalhes <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 3 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Cartão de estudante do Instituto Federal">🪪</span>
+                            <span class="tag tag--encontrado"><svg><use href="#i-check"/></svg> Encontrado</span>
+                            <span class="tag tag--categoria">Documentos</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Cartão do Estudante / SUAP</h3>
+                            <p class="card__descricao">Identificação estudantil de matrícula com iniciais M. S. Entregue à...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Refeitório Estudantil</li>
+                                    <li><svg><use href="#i-relogio"/></svg> Encontrado ontem, 14:15</li>
+                                </ul>
+                                <a class="botao botao--acao" href="em-branco.html">Reivindicar item <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 4 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Garrafa térmica verde sobre mesa no pátio">🍶</span>
+                            <span class="tag tag--perdido"><svg><use href="#i-lupa"/></svg> Perdido</span>
+                            <span class="tag tag--categoria">Outros</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Garrafa Térmica Stanley Verde</h3>
+                            <p class="card__descricao">Garrafa verde oliva com pequeno arranhão na base. Esquecida durante</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Pátio Central / Cantina</li>
+                                    <li><svg><use href="#i-calendario"/></svg> Perdido em 23/10/2024</li>
+                                </ul>
+                                <a class="botao botao--acao botao--acao-suave" href="em-branco.html">Ver detalhes <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 5 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Fones de ouvido sem fio ao lado de um caderno">🎧</span>
+                            <span class="tag tag--encontrado"><svg><use href="#i-check"/></svg> Encontrado</span>
+                            <span class="tag tag--categoria">Eletrônicos</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Fone de ouvido Bluetooth Branco</h3>
+                            <p class="card__descricao">Estojo carregador branco com fones intra-auriculares. Deixado sobre uma</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Biblioteca Central - Piso 2</li>
+                                    <li><svg><use href="#i-relogio"/></svg> Encontrado hoje, 11:00</li>
+                                </ul>
+                                <a class="botao botao--acao" href="em-branco.html">Reivindicar item <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 6 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Moletom cinza dobrado sobre banco de madeira">🧥</span>
+                            <span class="tag tag--perdido"><svg><use href="#i-lupa"/></svg> Perdido</span>
+                            <span class="tag tag--categoria">Roupas</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Moletom Canguru Cinza - Tam. M</h3>
+                            <p class="card__descricao">Casaco com capuz cinza mescla com o emblema do Instituto Federal no...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Quadra Poliesportiva</li>
+                                    <li><svg><use href="#i-calendario"/></svg> Perdido em 22/10/2024</li>
+                                </ul>
+                                <a class="botao botao--acao botao--acao-suave" href="em-branco.html">Ver detalhes <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 7 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Molho de chaves com tag vermelha sobre a mesa">🔑</span>
+                            <span class="tag tag--encontrado"><svg><use href="#i-check"/></svg> Encontrado</span>
+                            <span class="tag tag--categoria">Outros</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Chaveiro com chave de armário</h3>
+                            <p class="card__descricao">Duas chaves pequenas tipo Yale com tag plástica vermelha com o número...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Vestiário Masculino / Quadra</li>
+                                    <li><svg><use href="#i-relogio"/></svg> Encontrado ontem, 17:40</li>
+                                </ul>
+                                <a class="botao botao--acao" href="em-branco.html">Reivindicar item <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 8 -->
+                    <article class="card">
+                        <div class="card__midia">
+                            <span class="card__emoji" role="img" aria-label="Estojo azul aberto com canetas sobre a carteira">✏️</span>
+                            <span class="tag tag--encontrado"><svg><use href="#i-check"/></svg> Encontrado</span>
+                            <span class="tag tag--categoria">Materiais escolares</span>
+                        </div>
+                        <div class="card__corpo">
+                            <h3 class="card__titulo">Estojo Azul Faber-Castell</h3>
+                            <p class="card__descricao">Estojo de tecido azul marinho com canetas esferográficas, marcadores...</p>
+
+                            <div class="card__rodape">
+                                <ul class="card__meta">
+                                    <li><svg><use href="#i-pin"/></svg> Auditório Principal</li>
+                                    <li><svg><use href="#i-relogio"/></svg> Encontrado ontem, 19:10</li>
+                                </ul>
+                                <a class="botao botao--acao" href="em-branco.html">Reivindicar item <svg><use href="#i-chevron"/></svg></a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- /grade-itens -->
+
+                <div class="acoes-catalogo">
+                    <a class="botao botao--flutuante" href="em-branco.html">
+                        <svg><use href="#i-mais-simples"/></svg> Cadastrar item
+                    </a>
+                    <button class="botao botao--contorno" id="carregar-mais" type="button">
+                        <svg><use href="#i-recarregar"/></svg> Carregar mais itens do catálogo
+                    </button>
+                    <p class="acoes-catalogo__contagem" id="contagem" aria-live="polite">Exibindo 8 de 38 itens disponíveis para resgate</p>
+                </div>
+
+            </div>
+
+            <!-- Faixa institucional de atendimento -->
+            <div class="faixa-atendimento">
+                <div class="container faixa-atendimento__interno">
+                    <span class="faixa-atendimento__icone"><svg><use href="#i-info"/></svg></span>
+                    <div class="faixa-atendimento__texto">
+                        <strong>Central de Achados e Perdidos: Prédio Central, Sala 104 - Térreo</strong>
+                        <p>Atendimento presencial para identificação e retirada: Segunda a Sexta, das 08h às 20h.</p>
+                    </div>
+                    <div class="faixa-atendimento__acoes">
+                        <a class="botao botao--contorno botao--pequeno" href="em-branco.html">Guia de Retirada</a>
+                        <a class="botao botao--primario botao--pequeno" href="em-branco.html">Contatar Coordenação</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="rodape">
+        <div class="container rodape__interno">
+
+            <p class="rodape__marca">
+                <svg><use href="#i-capelo"/></svg> <span>Achados IF</span>
+            </p>
+
+            <p class="rodape__copy">
+                © 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.
+            </p>
+
+            <nav class="rodape__links" aria-label="Links institucionais">
+                <a href="em-branco.html">Termos de Uso</a>
+                <a href="em-branco.html">Privacidade</a>
+                <a href="em-branco.html">Guia de Retirada</a>
+                <a href="em-branco.html">Contato da Reitoria</a>
+            </nav>
+
+        </div>
+    </footer>
+
+    <script src="js/inicio.js"></script>
+</body>
+</html>
