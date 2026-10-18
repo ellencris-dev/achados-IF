@@ -1,0 +1,313 @@
+/* =========================================================
+   PÁGINA MEUS ITENS (+ JANELA DE EXCLUSÃO)
+   ========================================================= */
+
+/* Texto "Aluno(a)" abaixo do campus no cabeçalho */
+.usuario-tipo {
+    font-size: 11px;
+    opacity: 0.85;
+}
+
+
+/* ---------- Cartão da lista ---------- */
+.lista-cartao {
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.lista-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Abas "Ativos" e "Devolvidos" */
+.abas {
+    display: flex;
+    gap: 8px;
+}
+
+.aba {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--borda);
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.aba.ativa {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: var(--branco);
+}
+
+.contador {
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    border-radius: 10px;
+    padding: 0 7px;
+    font-size: 11px;
+}
+
+/* Busca pequena */
+.busca-pequena {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 260px;
+    padding: 0 12px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    color: var(--texto-cinza);
+}
+
+.busca-pequena input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+
+/* ---------- Cada item da lista ---------- */
+.meu-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.meu-item-imagem {
+    position: relative;
+    width: 150px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--verde-claro);
+}
+
+.meu-item-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meu-item-imagem .etiqueta {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.meu-item-info {
+    flex: 1;
+}
+
+.meu-item-topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--texto-cinza);
+}
+
+.meu-item-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 0 2px;
+}
+
+.meu-item-descricao {
+    color: var(--texto-cinza);
+    margin-bottom: 6px;
+}
+
+.meu-item-dados {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+}
+
+.meu-item-dados .icone {
+    font-size: 15px;
+    color: var(--verde-principal);
+}
+
+/* Botões da direita */
+.meu-item-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.acoes-linha {
+    display: flex;
+    gap: 6px;
+}
+
+.botao-pequeno {
+    padding: 7px 12px;
+    font-size: 12px;
+}
+
+.botao-lixeira {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    color: var(--vermelho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-lixeira:hover {
+    background-color: var(--vermelho-claro);
+}
+
+
+/* ---------- Caixa de diretrizes ---------- */
+.aviso-diretrizes {
+    align-items: center;
+    padding: 18px;
+}
+
+.aviso-icone {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    background-color: var(--branco);
+}
+
+.rodape-logo {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.rodape-logo strong {
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   JANELA (MODAL) DE EXCLUSÃO
+   ========================================================= */
+
+/* Fundo escuro que cobre a tela inteira. Começa escondido. */
+.modal-fundo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px); /* deixa o fundo desfocado */
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Quando o link "#modal-excluir" é clicado, a janela aparece */
+.modal-fundo:target {
+    display: flex;
+}
+
+.modal {
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--branco);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-topo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.modal-alerta {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: var(--vermelho-claro);
+    color: var(--vermelho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-topo h2 {
+    font-size: 16px;
+    color: var(--vermelho);
+}
+
+.modal-pergunta {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.modal-fechar {
+    margin-left: auto;
+    color: var(--texto-cinza);
+}
+
+.modal-texto {
+    color: var(--texto-cinza);
+    margin: 12px 0 12px 52px;
+}
+
+.modal-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 52px;
+    padding: 10px 12px;
+    border: 1px solid var(--verde-borda);
+    border-radius: 8px;
+    background-color: var(--verde-fundo);
+}
+
+.modal-item strong {
+    display: block;
+    font-size: 13px;
+}
+
+.modal-item small {
+    font-size: 11px;
+    color: var(--texto-cinza);
+}
+
+.modal-botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--borda);
+}

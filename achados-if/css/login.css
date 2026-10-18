@@ -1,0 +1,102 @@
+/* =========================================================
+   PÁGINA DE LOGIN
+   ========================================================= */
+
+/* Fundo cinza-esverdeado e cartão centralizado */
+body {
+    background-color: #f2f5f2;
+}
+
+.area-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.cartao-login {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+}
+
+/* Topo do cartão */
+.login-topo {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-icone {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-icone .icone {
+    font-size: 24px;
+}
+
+.login-titulo {
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-subtitulo {
+    color: var(--texto-cinza);
+    margin-top: 4px;
+}
+
+/* Linha "Lembrar de mim / Esqueci minha senha" */
+.login-opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-cinza);
+}
+
+.link-forte {
+    font-weight: 700;
+}
+
+.texto-centro {
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--texto-cinza);
+}
+
+/* Informações abaixo do cartão */
+.login-info {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.login-info .icone {
+    font-size: 14px;
+}
+
+/* Rodapé desta página tem só uma linha */
+.rodape {
+    color: var(--texto);
+}

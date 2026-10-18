@@ -1,0 +1,243 @@
+/* =========================================================
+   PÁGINA INICIAL (LISTAGEM DE ITENS)
+   ========================================================= */
+
+/* ---------- Barra de busca ---------- */
+.busca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--branco);
+    border: 1px solid var(--verde-borda);
+    border-radius: 12px;
+    padding: 6px 6px 6px 16px;
+    margin-bottom: 16px;
+    color: var(--texto-cinza);
+}
+
+.busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+
+/* ---------- Filtros ---------- */
+.filtros {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 12px;
+}
+
+.filtros-rotulo {
+    font-weight: 600;
+    color: var(--texto-cinza);
+}
+
+.filtro {
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--borda);
+    background-color: var(--branco);
+    color: var(--texto);
+}
+
+.filtro.ativo {
+    background-color: var(--verde-principal);
+    border-color: var(--verde-principal);
+    color: var(--branco);
+}
+
+/* Empurra o total de itens para a direita */
+.total-itens {
+    margin-left: auto;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* ---------- Grade de cards (4 colunas) ---------- */
+.grade-itens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.item-card {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagem com as etiquetas por cima */
+.item-imagem {
+    position: relative;
+    height: 150px;
+    background-color: var(--verde-claro);
+}
+
+.item-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.item-categoria {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Textos do card */
+.item-corpo {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.item-corpo h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.item-descricao {
+    font-size: 12px;
+    color: var(--texto-cinza);
+    margin-bottom: 6px;
+}
+
+.item-dado {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.item-dado .icone {
+    font-size: 15px;
+    color: var(--texto-cinza);
+}
+
+.item-data {
+    color: var(--texto-cinza);
+    font-size: 11px;
+}
+
+/* Botão fica sempre no fim do card */
+.item-corpo .botao {
+    margin-top: auto;
+    padding: 8px;
+    font-size: 13px;
+}
+
+
+/* ---------- Botões abaixo da grade ---------- */
+.mais-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 32px 0 8px;
+}
+
+.botao-redondo {
+    border-radius: 30px;
+}
+
+.mais-itens p {
+    font-size: 11px;
+    color: var(--texto-cinza);
+}
+
+
+/* ---------- Faixa da Central de Achados ---------- */
+.faixa-central {
+    background-color: var(--verde-claro);
+    border-top: 1px solid var(--verde-borda);
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.faixa-texto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faixa-texto .icone {
+    font-size: 26px;
+    color: var(--verde-principal);
+}
+
+.faixa-texto strong {
+    font-size: 15px;
+}
+
+.faixa-texto p {
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.faixa-botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.faixa-botoes .botao {
+    font-size: 12px;
+    color: var(--texto);
+}
+
+.botao-escuro {
+    background-color: var(--verde-escuro);
+    color: var(--branco) !important;
+}
+
+
+/* ---------- Rodapé com logo ---------- */
+.rodape {
+    background-color: var(--branco);
+}
+
+.rodape-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rodape-logo strong {
+    color: var(--texto);
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+
+/* ---------- Telas menores ---------- */
+@media (max-width: 900px) {
+    .grade-itens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

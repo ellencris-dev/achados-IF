@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Achados IF</title>
+
+    <!-- Fonte Inter e ícones do Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO DO SISTEMA ===== -->
+    <header class="cabecalho-sistema">
+        <div class="logo">
+            <div class="logo-icone"><span class="icone">manage_search</span></div>
+            <div>
+                <p class="logo-nome">Achados IF</p>
+                <p class="logo-subtitulo">Rede Federal de Educação</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="inicio.html" class="ativo"><span class="icone">home</span> Início</a>
+            <a href="meus-itens.html"><span class="icone">inventory_2</span> Meus itens</a>
+            <a href="cadastrar-item.html"><span class="icone">add_circle</span> Cadastrar item</a>
+        </nav>
+
+        <div class="usuario">
+            <div class="usuario-campus">
+                <span class="icone">school</span> Campus Central - Aluno
+            </div>
+            <a href="login.html"><span class="icone">logout</span> Sair</a>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo">
+
+        <!-- Título da página -->
+        <section class="pagina-topo">
+            <div>
+                <span class="etiqueta"><span class="icone">verified_user</span> Central de Custódia e Devolução Acadêmica</span>
+                <h1 class="pagina-titulo">Recuperação de Pertences</h1>
+                <p class="pagina-descricao">
+                    Consulte a lista institucional de bens perdidos ou encontrados em todos os blocos,
+                    auditórios e laboratórios do Instituto Federal.
+                </p>
+            </div>
+            <span class="etiqueta etiqueta-branca"><span class="icone">schedule</span> Central: Seg a Sex, 08h às 20h</span>
+        </section>
+
+        <!-- Barra de busca -->
+        <form class="busca" id="form-busca">
+            <span class="icone">search</span>
+            <input type="text" id="campo-busca" placeholder="Buscar item por nome, descrição ou local...">
+            <button type="submit" class="botao botao-principal">Buscar <span class="icone">arrow_forward</span></button>
+        </form>
+
+        <!-- Filtros -->
+        <section class="filtros">
+            <span class="filtros-rotulo">Status:</span>
+            <!-- data-status / data-categoria dizem ao JavaScript o que cada filtro faz -->
+            <a href="#" class="filtro ativo" data-status="todos">Todos</a>
+            <a href="#" class="filtro" data-status="perdido">Perdidos</a>
+            <a href="#" class="filtro" data-status="encontrado">Encontrados</a>
+
+            <span class="divisor-vertical"></span>
+
+            <a href="#" class="filtro ativo" data-categoria="todas">Todas categorias</a>
+            <a href="#" class="filtro" data-categoria="Eletrônicos">Eletrônicos</a>
+            <a href="#" class="filtro" data-categoria="Documentos">Documentos</a>
+            <a href="#" class="filtro" data-categoria="Roupas">Roupas</a>
+            <a href="#" class="filtro" data-categoria="Material escolar">Material escolar</a>
+            <a href="#" class="filtro" data-categoria="Outros">Outros</a>
+
+            <span class="total-itens" id="total-itens"></span>
+        </section>
+
+        <!-- ===== GRADE DE ITENS =====
+             Começa vazia: o js/inicio.js cria um card para cada item salvo. -->
+        <section class="grade-itens" id="grade-itens"></section>
+
+        <!-- Botões abaixo da grade -->
+        <section class="mais-itens">
+            <a href="cadastrar-item.html" class="botao botao-principal botao-redondo"><span class="icone">add</span> Cadastrar item</a>
+            <p id="contagem"></p>
+        </section>
+    </main>
+
+    <!-- Faixa da Central de Achados e Perdidos -->
+    <section class="faixa-central">
+        <div class="faixa-texto">
+            <span class="icone">location_on</span>
+            <div>
+                <strong>Central de Achados e Perdidos: Prédio Central, Sala 104 - Térreo</strong>
+                <p>Atendimento presencial para identificação e retirada. Segunda a Sexta, das 08h às 20h.</p>
+            </div>
+        </div>
+        <div class="faixa-botoes">
+            <a href="#" class="botao">Guia de Retirada</a>
+            <a href="#" class="botao botao-escuro">Contatar Coordenação</a>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="rodape-logo">
+            <span class="logo-icone"><span class="icone">manage_search</span></span>
+            <strong>Achados IF</strong>
+            <p>© 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.</p>
+        </div>
+        <nav class="rodape-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Guia de Retirada</a>
+            <a href="#">Contato da Reitoria</a>
+        </nav>
+    </footer>
+
+    <!-- JavaScript: primeiro o comum (usado por todas as páginas), depois o da página -->
+    <script src="js/comum.js"></script>
+    <script src="js/inicio.js"></script>
+
+</body>
+</html>

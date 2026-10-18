@@ -1,0 +1,115 @@
+/* =========================================================
+   PÁGINA DE CADASTRO (CRIAR CONTA)
+   ========================================================= */
+
+.area-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 40px;
+}
+
+/* Linha "Voltar ao início" + etiqueta */
+.cadastro-barra {
+    width: 100%;
+    max-width: 460px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Cartão branco */
+.cartao-cadastro {
+    width: 100%;
+    max-width: 460px;
+    padding: 28px 32px;
+}
+
+/* Topo do cartão */
+.cadastro-topo {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.cadastro-icones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.cadastro-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: var(--verde-claro);
+    border: 1px solid var(--verde-borda);
+    color: var(--verde-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro-titulo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.cadastro-subtitulo {
+    color: var(--texto-cinza);
+}
+
+/* Campos com fundo verde clarinho nesta página */
+.cartao-cadastro .campo-caixa {
+    background-color: var(--verde-fundo);
+    border-color: var(--verde-borda);
+}
+
+/* Senha e confirmar senha lado a lado */
+.campos-lado-a-lado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Checkbox dos termos */
+.termos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--texto-cinza);
+    margin-bottom: 18px;
+}
+
+.termos a {
+    text-decoration: underline;
+}
+
+.texto-centro {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--texto-cinza);
+}
+
+/* Informações abaixo do cartão */
+.cadastro-info {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.cadastro-info .icone {
+    font-size: 14px;
+}

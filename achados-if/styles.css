@@ -1,0 +1,153 @@
+/* 1. Tema: personalize estas variáveis para mudar a identidade visual. */
+:root {
+  color-scheme: light;
+  --green-900: #145c2b;
+  --green-800: #1b6b34;
+  --green-700: #25813e;
+  --green-100: #e8f6e9;
+  --green-75: #f2faf3;
+  --page: #f0fbf1;
+  --ink: #18231c;
+  --muted: #66736b;
+  --border: #dce7dd;
+  --danger: #bc3030;
+  --shadow: 0 12px 28px rgba(24, 57, 30, .075), 0 2px 5px rgba(24, 57, 30, .07);
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--page); font-size: 14px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #7dbd8a; outline-offset: 3px; }
+button:not(.submit-button) { -webkit-tap-highlight-color: transparent; }
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon { display: inline-block; width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.85; stroke-linecap: round; stroke-linejoin: round; }
+.site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* 2. Cabeçalho do site */
+.site-header { height: 68px; background: white; border-bottom: 1px solid #e5eee6; display: flex; justify-content: space-between; align-items: center; padding: 0 clamp(18px, 3vw, 38px); gap: 24px; }
+.brand { display: flex; align-items: center; gap: 11px; color: inherit; text-decoration: none; }
+.brand-symbol { width: 42px; height: 42px; border-radius: 11px; background: var(--green-700); color: white; display: grid; place-items: center; box-shadow: 0 2px 7px #1e783d33; }
+.brand-symbol .icon { width: 24px; height: 24px; }
+.brand-copy { display: flex; flex-direction: column; gap: 1px; }
+.brand-copy strong { font-size: 18px; line-height: 1.15; color: var(--green-900); font-weight: 800; letter-spacing: -.45px; }
+.brand-copy small { font-size: 11px; color: #748077; font-weight: 500; }
+.top-nav { display: flex; align-items: center; gap: 24px; }
+.text-link { background: transparent; border: 0; padding: 5px 0; color: #606b63; font-size: 12px; font-weight: 650; }
+.text-link:hover, .text-link:focus-visible { color: var(--green-800); }
+.top-link { display: inline-flex; align-items: center; gap: 6px; }
+.top-link .icon { width: 17px; height: 17px; }
+
+/* 3. Área central */
+.main { flex: 1; padding: 29px 18px 38px; }
+.content-container { width: 100%; max-width: 576px; margin: 0 auto; }
+.precard-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 4px 16px; }
+.back-link { display: flex; align-items: center; gap: 6px; color: var(--green-800); font-size: 13px; }
+.back-link .icon { width: 17px; height: 17px; }
+.security-label { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #dbeee0; background: #e7f6e9; color: #4e755a; border-radius: 16px; padding: 7px 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.security-label .icon { width: 13px; height: 13px; }
+.signup-card { background: white; border-radius: var(--radius); border: 1px solid #dfe9df; padding: 31px 32px 29px; box-shadow: var(--shadow); }
+
+/* 4. Título e selo */
+.intro { text-align: center; margin-bottom: 29px; }
+.intro-icon { width: 53px; height: 53px; border-radius: 16px; display: grid; place-items: center; background: #e2f3e5; color: var(--green-800); margin: 0 auto 8px; }
+.intro-icon .icon { width: 30px; height: 30px; }
+.intro-badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 20px; padding: 6px 11px; background: #e6f5e8; color: var(--green-800); font-size: 11px; font-weight: 750; }
+.intro-badge .icon { width: 13px; height: 13px; }
+.intro h1 { font-size: clamp(28px, 4.3vw, 34px); line-height: 1.15; letter-spacing: -1.15px; margin: 17px 0 9px; font-weight: 800; }
+.intro > p { color: #68746d; line-height: 1.5; font-size: 13px; margin: 0; }
+
+/* 5. Campos do formulário */
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; font-size: 13px; color: #344138; font-weight: 700; margin: 0 0 7px; }
+.required-indicator { color: #548c5c; }
+.input-wrap { position: relative; display: flex; align-items: center; }
+.input-wrap input { width: 100%; min-width: 0; height: 50px; border: 1px solid #d5e9d8; border-radius: 12px; background: #edf9ee; color: #1b3522; padding: 0 14px 0 43px; font-size: 13px; outline: none; transition: border-color .18s, box-shadow .18s, background-color .18s; }
+.input-wrap input::placeholder { color: #97a99a; opacity: 1; }
+.input-wrap input:focus { border-color: #3c9c57; box-shadow: 0 0 0 3px rgba(43,139,67,.13); background: #f8fff8; }
+.input-wrap input[aria-invalid="true"] { border-color: var(--danger); background: #fff8f8; }
+.input-icon { position: absolute; left: 14px; color: #799781; width: 17px; height: 17px; pointer-events: none; }
+.field-help { margin: 5px 2px 0; font-size: 10.7px; font-weight: 500; line-height: 1.45; color: #7b857d; }
+.field-error { margin: 5px 2px 0; color: var(--danger); font-size: 11px; line-height: 1.35; }
+.field-error:empty { display: none; }
+.password-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 15px; }
+.password-grid .form-field { margin-bottom: 15px; }
+.password-grid .input-wrap input { padding-right: 42px; }
+.password-toggle { position: absolute; right: 6px; width: 34px; height: 34px; border: 0; display: grid; place-items: center; color: #809585; background: transparent; border-radius: 7px; }
+.password-toggle:hover { color: var(--green-800); background: #e0f2e3; }
+.password-toggle .icon { width: 17px; height: 17px; }
+
+/* 6. Aceite de termos e botão */
+.agreement-block { margin: 3px 0 21px; }
+.agreement { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.6; color: #5b665e; }
+.agreement label { cursor: pointer; }
+.agreement input { width: 18px; height: 18px; flex: none; margin: 1px 0 0; accent-color: var(--green-700); }
+.agreement span { display: block; }
+.inline-link { appearance: none; border: 0; background: transparent; text-decoration: underline; padding: 0; color: var(--green-800); font-size: inherit; font-weight: 700; display: inline; }
+.inline-link:hover { color: #134a25; }
+.submit-button { width: 100%; border: 0; color: white; font-size: 16px; font-weight: 750; border-radius: 11px; background: #23843a; padding: 17px 15px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 3px 7px #26863a22; transition: background-color .15s, transform .15s; }
+.submit-button:hover { background: #1c722f; }
+.submit-button:active { transform: translateY(1px); }
+.submit-button .icon { width: 19px; height: 19px; }
+.form-feedback { padding: 12px 14px; margin-top: 12px; border: 1px solid #b8dfc0; border-radius: 10px; background: #ecf9ee; color: var(--green-900); font-size: 12px; line-height: 1.5; }
+.form-feedback[hidden], .toast[hidden] { display: none; }
+.signin { text-align: center; color: #6a756c; font-size: 12px; margin: 25px 0 23px; }
+.signin-link { text-decoration: none; }
+.privacy-note { display: flex; align-items: flex-start; gap: 10px; border-top: 1px solid #e7ece7; padding: 19px 13px 0; margin-top: 0; }
+.privacy-note > .icon { width: 18px; height: 18px; color: var(--green-700); margin-top: 13px; z-index: 1; margin-left: 11px; }
+.privacy-note > div { flex: 1; min-width: 0; padding: 10px 12px 12px 0; z-index: 1; }
+.privacy-note { position: relative; isolation: isolate; }
+.privacy-note::after { content: ""; position: absolute; inset: 15px 0 0; background: #ecf9ee; border: 1px solid #d8eedc; border-radius: 11px; z-index: 0; }
+.privacy-note strong { font-size: 12px; font-weight: 800; color: #315a3a; }
+.privacy-note p { margin: 3px 0 0; color: #6d846f; font-size: 11px; line-height: 1.55; }
+
+/* 7. Informações de atendimento e rodapé */
+.contact-details { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 24px; text-align: center; }
+.contact-details p { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; color: #7c8d7e; line-height: 1.5; font-size: 11.5px; }
+.contact-details .icon { width: 15px; height: 15px; }
+.site-footer { min-height: 93px; border-top: 1px solid #dceadb; background: #eaf7ec; padding: 20px clamp(18px, 3vw, 38px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.footer-institution strong { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: #39493b; }
+.footer-institution strong .icon { width: 16px; height: 16px; color: var(--green-800); }
+.footer-institution p { color: #819082; font-size: 10.5px; margin: 6px 0 0; }
+.footer-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; column-gap: 17px; row-gap: 7px; }
+.footer-nav .text-link { font-size: 10.5px; color: #738276; }
+
+/* 8. Avisos e janela demonstrativa */
+.toast { position: fixed; bottom: 19px; right: 19px; max-width: min(400px, calc(100vw - 38px)); padding: 13px 18px; background: #214c2a; border-radius: 12px; color: white; box-shadow: 0 8px 28px #143b1e44; z-index: 5; line-height: 1.45; font-size: 12px; }
+dialog { width: min(430px, calc(100vw - 34px)); border: 1px solid #dce8df; border-radius: 16px; padding: 23px; box-shadow: 0 18px 70px #0b2f1744; }
+dialog::backdrop { background: #102819a6; }
+.dialog-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.dialog-head h2 { margin: 0; font-size: 20px; color: var(--green-900); }
+.dialog-head button { font-size: 24px; line-height: 1; border: 0; background: transparent; color: #657968; }
+dialog p { font-size: 13px; line-height: 1.65; color: #647368; }
+.dialog-button { background: var(--green-700); border: 0; border-radius: 8px; padding: 10px 17px; font-weight: 700; color: white; }
+
+/* 9. Layout responsivo para celular, tablet e desktop */
+@media (max-width: 700px) {
+  .site-header { min-height: 66px; height: auto; padding-top: 12px; padding-bottom: 12px; }
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-nav { justify-content: flex-start; }
+}
+@media (max-width: 540px) {
+  .main { padding: 19px 12px 31px; }
+  .site-header { gap: 8px; padding-left: 14px; padding-right: 14px; }
+  .brand-symbol { width: 37px; height: 37px; }
+  .brand-copy strong { font-size: 16px; }
+  .brand-copy small { font-size: 9px; }
+  .top-nav { gap: 11px; }
+  .top-link span { display: none; }
+  .top-link .icon { width: 20px; height: 20px; }
+  .top-link { padding: 8px; }
+  .precard-row { margin-bottom: 12px; gap: 6px; }
+  .security-label { font-size: 9px; padding: 6px 7px; }
+  .back-link { font-size: 11px; }
+  .signup-card { padding: 26px 19px 22px; border-radius: 17px; }
+  .intro { margin-bottom: 24px; }
+  .intro h1 { margin-top: 13px; }
+  .password-grid { grid-template-columns: 1fr; gap: 0; }
+  .agreement { font-size: 12px; }
+  .contact-details p { font-size: 10.5px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }

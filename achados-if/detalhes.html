@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do item - Achados IF</title>
+
+    <!-- Fonte Inter e ícones do Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/detalhes.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO DO SISTEMA ===== -->
+    <header class="cabecalho-sistema">
+        <div class="logo">
+            <div class="logo-icone"><span class="icone">manage_search</span></div>
+            <div>
+                <p class="logo-nome">Achados IF</p>
+                <p class="logo-subtitulo">Rede Federal de Educação</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="inicio.html" class="ativo">Início</a>
+            <a href="meus-itens.html">Meus itens</a>
+            <a href="cadastrar-item.html"><span class="icone">add_circle</span> Cadastrar item</a>
+        </nav>
+
+        <div class="usuario">
+            <div class="usuario-campus">
+                <span class="icone">school</span> Campus Central - Aluno
+            </div>
+            <a href="login.html"><span class="icone">logout</span> Sair</a>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo">
+
+        <a href="inicio.html" class="botao botao-contorno botao-voltar">
+            <span class="icone">arrow_back</span> Voltar para listagem
+        </a>
+
+        <div class="detalhes">
+
+            <!-- ===== COLUNA DA ESQUERDA: FOTOS ===== -->
+            <section class="detalhes-fotos">
+                <div class="cartao cartao-fotos">
+                    <div class="foto-principal">
+                        <img src="imagens/sem-foto.svg" alt="Foto do item" id="detalhe-foto">
+                        <span class="etiqueta etiqueta-branca foto-selo"><span class="icone">verified</span> Registro Fotográfico Oficial</span>
+                        <span class="foto-zoom"><span class="icone">zoom_in</span></span>
+                    </div>
+
+                    <div class="fotos-rodape">
+                        <div class="miniaturas">
+                            <img src="imagens/sem-foto.svg" alt="Miniatura do item" class="miniatura ativa" id="detalhe-miniatura">
+                            <span class="miniatura miniatura-vazia"><span class="icone">photo_camera</span></span>
+                        </div>
+                        <div class="registro">
+                            <p><span class="icone">schedule</span> Custódia permanente</p>
+                            <p id="detalhe-registro"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aviso">
+                    <span class="icone">info</span>
+                    <p>
+                        <strong>Inspeção física realizada</strong>
+                        O objeto foi catalogado e encontra-se devidamente higienizado e armazenado
+                        em armário fechado da sala de coordenação.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== COLUNA DA DIREITA: INFORMAÇÕES ===== -->
+            <section class="cartao detalhes-info">
+
+                <div class="etiquetas">
+                    <!-- Os elementos com id="detalhe-..." são preenchidos pelo js/detalhes.js -->
+                    <span id="detalhe-situacao"></span>
+                    <span class="etiqueta" id="detalhe-categoria"></span>
+                    <span class="etiqueta etiqueta-aguardando" id="detalhe-estado"></span>
+                </div>
+
+                <h1 class="item-titulo" id="detalhe-titulo"></h1>
+                <p class="item-texto" id="detalhe-descricao"></p>
+
+                <!-- Quadro de informações -->
+                <div class="info-grade">
+                    <div class="info-caixa">
+                        <span class="icone">label</span>
+                        <div><small>Categoria</small><strong id="detalhe-categoria-caixa"></strong></div>
+                    </div>
+                    <div class="info-caixa">
+                        <span class="icone">location_on</span>
+                        <div><small>Local no campus</small><strong id="detalhe-local"></strong></div>
+                    </div>
+                    <div class="info-caixa">
+                        <span class="icone">calendar_today</span>
+                        <div><small>Data do ocorrido</small><strong id="detalhe-data"></strong></div>
+                    </div>
+                    <div class="info-caixa">
+                        <span class="icone">person</span>
+                        <div>
+                            <small>Cadastrado por</small>
+                            <strong id="detalhe-dono"></strong>
+                        </div>
+                    </div>
+                    <div class="info-caixa info-caixa-larga">
+                        <span class="icone">apartment</span>
+                        <div>
+                            <small>Local de retirada / custódia física</small>
+                            <strong>Central de Achados e Perdidos</strong>
+                            <small>Bloco Central, Sala 104 • Horário de atendimento: 08h às 18h</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de ação -->
+                <a href="#" class="botao botao-principal botao-largo" id="botao-contato">
+                    <span class="icone">chat</span> Entrar em contato
+                </a>
+                <a href="#" class="botao botao-contorno botao-largo" id="botao-reivindicar">
+                    <span class="icone">back_hand</span> Reivindicar posse deste item
+                </a>
+
+                <div class="aviso aviso-retirada">
+                    <span class="icone">verified_user</span>
+                    <p>
+                        <strong>Instrução para retirada:</strong>
+                        Para retirar o item, apresente documento com foto e comprove
+                        posse (ou características específicas) na Sala 104.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div>
+            <p class="rodape-titulo"><span class="icone">verified_user</span> Instituto Federal de Educação, Ciência e Tecnologia</p>
+            <p>© 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.</p>
+        </div>
+        <nav class="rodape-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Guia de Retirada</a>
+            <a href="#">Contato da Reitoria</a>
+        </nav>
+    </footer>
+
+    <!-- JavaScript: primeiro o comum (usado por todas as páginas), depois o da página -->
+    <script src="js/comum.js"></script>
+    <script src="js/detalhes.js"></script>
+
+</body>
+</html>

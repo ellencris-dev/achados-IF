@@ -1,0 +1,508 @@
+/* =========================================================
+   ACHADOS IF - ESTILO GLOBAL
+   Este arquivo é usado por TODAS as páginas.
+   Aqui ficam: cores, fontes, cabeçalho, rodapé, botões,
+   campos de formulário e etiquetas (badges).
+   ========================================================= */
+
+
+/* ---------- 1. CORES DO SITE (variáveis) ----------
+   Para mudar uma cor no site inteiro, basta alterar aqui. */
+:root {
+    --verde-principal: #2e7d32;   /* botões e cabeçalho */
+    --verde-escuro: #1b5e20;      /* hover dos botões */
+    --verde-claro: #e8f5e9;       /* fundos de destaque */
+    --verde-fundo: #f1f8f1;       /* fundo das páginas */
+    --verde-borda: #c8e6c9;       /* bordas esverdeadas */
+
+    --laranja: #ef6c00;           /* status "Perdido" */
+    --laranja-claro: #fff3e0;
+
+    --vermelho: #d32f2f;          /* botão excluir */
+    --vermelho-claro: #ffebee;
+
+    --texto: #1a1a1a;             /* texto principal */
+    --texto-cinza: #6b7280;       /* textos secundários */
+    --borda: #e5e7eb;             /* bordas cinzas */
+    --campo-fundo: #f3f6f3;       /* fundo dos campos */
+    --branco: #ffffff;
+}
+
+
+/* ---------- 2. RESET BÁSICO ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--verde-fundo);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--verde-principal);
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Ícones do Google (Material Symbols) */
+.icone {
+    font-family: "Material Symbols Outlined";
+    font-size: 18px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Área principal: ocupa o espaço entre cabeçalho e rodapé */
+.conteudo {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+
+/* ---------- 3. LOGO ---------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icone {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-nome {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--verde-principal);
+    line-height: 1.1;
+}
+
+.logo-subtitulo {
+    font-size: 11px;
+    color: var(--texto-cinza);
+}
+
+
+/* ---------- 4. CABEÇALHO PÚBLICO (login e cadastro) ---------- */
+.cabecalho-publico {
+    background-color: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.cabecalho-links a {
+    color: var(--texto);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.divisor-vertical {
+    width: 1px;
+    height: 18px;
+    background-color: var(--borda);
+}
+
+.ponto-verde {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--verde-principal);
+}
+
+
+/* ---------- 5. CABEÇALHO DO SISTEMA (usuário logado) ---------- */
+.cabecalho-sistema {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.cabecalho-sistema .logo-icone {
+    background-color: var(--branco);
+    color: var(--verde-principal);
+}
+
+.cabecalho-sistema .logo-nome,
+.cabecalho-sistema .logo-subtitulo {
+    color: var(--branco);
+}
+
+.cabecalho-sistema .logo-subtitulo {
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* Menu de navegação */
+.menu {
+    display: flex;
+    gap: 6px;
+}
+
+.menu a {
+    color: var(--branco);
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Área do usuário (campus + avatar + sair) */
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.usuario-campus {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.usuario-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--branco);
+    color: var(--verde-principal);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usuario a {
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* ---------- 6. RODAPÉ ---------- */
+.rodape {
+    background-color: var(--verde-claro);
+    border-top: 1px solid var(--verde-borda);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.rodape-titulo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.rodape-links {
+    display: flex;
+    gap: 24px;
+}
+
+.rodape-links a {
+    color: var(--texto);
+    font-weight: 500;
+}
+
+
+/* ---------- 7. BOTÕES ---------- */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Botão verde cheio */
+.botao-principal {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+}
+
+.botao-principal:hover {
+    background-color: var(--verde-escuro);
+}
+
+/* Botão branco com borda */
+.botao-contorno {
+    background-color: var(--branco);
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+.botao-contorno:hover {
+    background-color: var(--verde-fundo);
+}
+
+/* Botão verde clarinho (usado nos cards) */
+.botao-suave {
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+}
+
+.botao-suave:hover {
+    background-color: var(--verde-borda);
+}
+
+/* Botão vermelho (excluir) */
+.botao-perigo {
+    background-color: var(--vermelho);
+    color: var(--branco);
+}
+
+/* Botão que ocupa a largura toda */
+.botao-largo {
+    width: 100%;
+}
+
+
+/* ---------- 8. CAMPOS DE FORMULÁRIO ---------- */
+.campo {
+    margin-bottom: 16px;
+    min-width: 0; /* permite que campos lado a lado dividam o espaço certinho */
+}
+
+.campo label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Caixa que junta ícone + input */
+.campo-caixa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--campo-fundo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 0 12px;
+    color: var(--texto-cinza);
+}
+
+.campo-caixa:focus-within {
+    border-color: var(--verde-principal);
+}
+
+.campo-caixa input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 11px 0;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    min-width: 0; /* evita que o campo "estoure" a largura da caixa */
+}
+
+/* Inputs, selects e textareas sem ícone */
+.entrada {
+    width: 100%;
+    background-color: var(--campo-fundo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 11px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.entrada:focus {
+    border-color: var(--verde-principal);
+}
+
+.campo-ajuda {
+    display: block;
+    font-size: 11px;
+    color: var(--texto-cinza);
+    margin-top: 4px;
+}
+
+.obrigatorio {
+    color: var(--vermelho);
+}
+
+/* Checkbox verde */
+input[type="checkbox"] {
+    accent-color: var(--verde-principal);
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ---------- 9. ETIQUETAS (badges) ---------- */
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+    border: 1px solid var(--verde-borda);
+}
+
+.etiqueta .icone {
+    font-size: 14px;
+}
+
+.etiqueta-encontrado {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    border-color: var(--verde-principal);
+}
+
+.etiqueta-perdido {
+    background-color: var(--laranja);
+    color: var(--branco);
+    border-color: var(--laranja);
+}
+
+.etiqueta-aguardando {
+    background-color: #fff8e1;
+    color: #b26a00;
+    border-color: #ffe0b2;
+}
+
+.etiqueta-branca {
+    background-color: var(--branco);
+    color: var(--texto);
+    border-color: var(--borda);
+}
+
+
+/* ---------- 10. CAIXA DE AVISO (verde clara) ---------- */
+.aviso {
+    display: flex;
+    gap: 10px;
+    background-color: var(--verde-fundo);
+    border: 1px solid var(--verde-borda);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.aviso .icone {
+    color: var(--verde-principal);
+}
+
+.aviso strong {
+    display: block;
+    color: var(--texto);
+    font-size: 13px;
+}
+
+
+/* ---------- 11. CARTÃO BRANCO PADRÃO ---------- */
+.cartao {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Linha divisória horizontal */
+.linha {
+    border: none;
+    border-top: 1px solid var(--borda);
+    margin: 20px 0;
+}
+
+
+/* ---------- 12. TÍTULO DAS PÁGINAS INTERNAS ---------- */
+.pagina-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.pagina-titulo {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 8px 0 4px;
+}
+
+.pagina-descricao {
+    color: var(--texto-cinza);
+    max-width: 560px;
+}
+
+
+/* Mensagem mostrada pelo JavaScript quando uma lista fica vazia */
+.lista-vazia {
+    grid-column: 1 / -1;          /* ocupa a linha inteira da grade */
+    padding: 32px;
+    text-align: center;
+    color: var(--texto-cinza);
+}

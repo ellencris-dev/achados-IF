@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus itens - Achados IF</title>
+
+    <!-- Fonte Inter e ícones do Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/meus-itens.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO DO SISTEMA ===== -->
+    <header class="cabecalho-sistema">
+        <div class="logo">
+            <div class="logo-icone"><span class="icone">manage_search</span></div>
+            <div>
+                <p class="logo-nome">Achados IF</p>
+                <p class="logo-subtitulo">Rede Federal de Educação</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="inicio.html"><span class="icone">home</span> Início</a>
+            <a href="meus-itens.html" class="ativo"><span class="icone">inventory_2</span> Meus itens</a>
+            <a href="cadastrar-item.html"><span class="icone">add_circle</span> Cadastrar item</a>
+        </nav>
+
+        <div class="usuario">
+            <span class="usuario-avatar">AL</span>
+            <div>
+                <strong>Campus Central</strong>
+                <p class="usuario-tipo">Aluno(a)</p>
+            </div>
+            <a href="login.html"><span class="icone">logout</span></a>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo">
+
+        <!-- Título da página -->
+        <section class="pagina-topo">
+            <div>
+                <span class="etiqueta"><span class="icone">verified_user</span> Central de Custódia e Devolução Acadêmica</span>
+                <h1 class="pagina-titulo">Meus itens</h1>
+                <p class="pagina-descricao">Itens que você cadastrou no sistema institucional de achados e perdidos.</p>
+            </div>
+            <a href="cadastrar-item.html" class="botao botao-principal"><span class="icone">add</span> Cadastrar item</a>
+        </section>
+
+        <section class="cartao lista-cartao">
+
+            <!-- Abas + busca -->
+            <div class="lista-topo">
+                <div class="abas">
+                    <a href="#" class="aba ativa" data-aba="ativos">Ativos <span class="contador" id="contador-ativos">0</span></a>
+                    <a href="#" class="aba" data-aba="devolvidos">Devolvidos <span class="contador" id="contador-devolvidos">0</span></a>
+                </div>
+                <div class="busca-pequena">
+                    <span class="icone">search</span>
+                    <input type="text" id="busca-meus-itens" placeholder="Buscar entre meus registros...">
+                </div>
+            </div>
+
+            <!-- ===== LISTA DE ITENS =====
+                 Começa vazia: o js/meus-itens.js cria uma linha para cada item seu. -->
+            <div id="lista-itens"></div>
+        </section>
+
+        <!-- Diretrizes -->
+        <div class="aviso aviso-diretrizes">
+            <span class="aviso-icone"><span class="icone">verified_user</span></span>
+            <p>
+                <strong>Diretrizes de Custódia e Arquivamento</strong>
+                Encontrou o dono ou recuperou seu bem? Clique em "Marcar como devolvido" para retirar o item do catálogo
+                público e arquivar o registro no campus com validade institucional. Para itens com mais de 30 dias sem
+                identificação, procure o setor de apoio acadêmico.
+            </p>
+        </div>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div class="rodape-logo">
+            <strong>Achados<br>IF</strong>
+            <p>© 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.</p>
+        </div>
+        <nav class="rodape-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Guia de Retirada</a>
+            <a href="#">Contato da Reitoria</a>
+        </nav>
+    </footer>
+
+
+    <!-- =========================================================
+         JANELA (MODAL) DE EXCLUSÃO
+         Ela fica escondida. Quando o endereço termina em
+         "#modal-excluir", o CSS (:target) mostra a janela.
+         Os botões "Cancelar" e "X" apontam para "#", fechando-a.
+         ========================================================= -->
+    <div id="modal-excluir" class="modal-fundo">
+        <div class="modal">
+            <div class="modal-topo">
+                <span class="modal-alerta"><span class="icone">warning</span></span>
+                <div>
+                    <h2>Excluir item</h2>
+                    <p class="modal-pergunta">Tem certeza que deseja excluir este item?</p>
+                </div>
+                <a href="#" class="modal-fechar"><span class="icone">close</span></a>
+            </div>
+
+            <p class="modal-texto">
+                Esta ação removerá o registro do catálogo institucional de achados e perdidos e não poderá ser desfeita.
+            </p>
+
+            <div class="modal-item">
+                <span class="icone">headphones</span>
+                <div>
+                    <strong id="modal-nome"></strong>
+                    <small id="modal-data"></small>
+                </div>
+            </div>
+
+            <div class="modal-botoes">
+                <a href="#" class="botao botao-contorno">Cancelar</a>
+                <a href="#" class="botao botao-perigo" id="confirmar-exclusao"><span class="icone">delete</span> Excluir</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript: primeiro o comum (usado por todas as páginas), depois o da página -->
+    <script src="js/comum.js"></script>
+    <script src="js/meus-itens.js"></script>
+
+</body>
+</html>

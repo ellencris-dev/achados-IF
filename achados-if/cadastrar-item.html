@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar item - Achados IF</title>
+
+    <!-- Fonte Inter e ícones do Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cadastrar-item.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO DO SISTEMA ===== -->
+    <header class="cabecalho-sistema">
+        <div class="logo">
+            <div class="logo-icone"><span class="icone">manage_search</span></div>
+            <div>
+                <p class="logo-nome">Achados IF</p>
+                <p class="logo-subtitulo">Rede Federal de Educação</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="inicio.html">Início</a>
+            <a href="meus-itens.html">Meus itens</a>
+            <a href="cadastrar-item.html" class="ativo">Cadastrar item</a>
+        </nav>
+
+        <div class="usuario">
+            <div class="usuario-campus">
+                <span class="icone">school</span> Campus Central - Aluno
+            </div>
+            <span class="usuario-avatar">AL</span>
+            <a href="login.html"><span class="icone">logout</span> Sair</a>
+        </div>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo">
+
+        <!-- Caminho da página + botão voltar -->
+        <div class="caminho-barra">
+            <p class="caminho">
+                <a href="inicio.html"><span class="icone">home</span> Início</a>
+                /
+                <strong>Registrar novo pertence</strong>
+            </p>
+            <a href="inicio.html" class="botao botao-contorno botao-pequeno">
+                <span class="icone">arrow_back</span> Voltar para listagem
+            </a>
+        </div>
+
+        <section class="cartao cartao-formulario">
+
+            <!-- Título do formulário -->
+            <div class="formulario-topo">
+                <h1><span class="formulario-icone"><span class="icone">add_box</span></span> <span id="titulo-pagina">Cadastrar item</span></h1>
+                <p>Preencha as informações detalhadas para ajudar a comunidade a encontrar ou devolver este pertence no campus.</p>
+            </div>
+
+            <form id="form-item">
+
+                <!-- Escolha da situação: Perdi / Achei -->
+                <p class="rotulo">Selecione a situação do item <span class="obrigatorio">*</span></p>
+                <div class="situacoes">
+                    <label class="situacao">
+                        <input type="radio" name="situacao" value="perdido">
+                        <span class="situacao-icone situacao-laranja"><span class="icone">search</span></span>
+                        <span>
+                            <strong>Perdi um item</strong>
+                            <small>Estou procurando algo que perdi no campus e quero alertar a comunidade.</small>
+                        </span>
+                    </label>
+
+                    <label class="situacao">
+                        <input type="radio" name="situacao" value="encontrado" checked>
+                        <span class="situacao-icone"><span class="icone">front_hand</span></span>
+                        <span>
+                            <strong>Achei um item</strong>
+                            <small>Encontrei um pertence e quero registrar para devolução segura ao proprietário.</small>
+                        </span>
+                    </label>
+                </div>
+
+                <hr class="linha">
+
+                <div class="campo">
+                    <label for="titulo">Título do item <span class="obrigatorio">*</span></label>
+                    <input type="text" id="titulo" class="entrada"
+                        placeholder="ex.: Garrafa térmica azul com adesivo, Chaveiro com 3 chaves, Calculadora Casio fx-82MS">
+                </div>
+
+                <div class="campos-lado-a-lado">
+                    <div class="campo">
+                        <label for="categoria">Categoria <span class="obrigatorio">*</span></label>
+                        <select id="categoria" class="entrada">
+                            <option value="">Selecione uma categoria</option>
+                            <option>Eletrônicos</option>
+                            <option>Documentos</option>
+                            <option>Roupas</option>
+                            <option>Material escolar</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data">Data do ocorrido / encontro <span class="obrigatorio">*</span></label>
+                        <input type="date" id="data" class="entrada">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="local">Local no Campus <span class="obrigatorio">*</span></label>
+                    <input type="text" id="local" class="entrada"
+                        placeholder="ex.: Biblioteca Central - mesas individuais, Bloco B Sala 12, Cantina/Pátio Central">
+                    <small class="campo-ajuda">Inclua detalhes como bloco, andar, sala ou ponto de referência específico.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição detalhada <span class="obrigatorio">*</span></label>
+                    <textarea id="descricao" class="entrada" rows="4"
+                        placeholder="Descreva características marcantes, marcas, arranhões, cor exata, tamanho, adesivos colados ou qualquer detalhe específico que comprove a titularidade na hora da retirada..."></textarea>
+                </div>
+
+                <!-- Envio de foto -->
+                <div class="campo">
+                    <label>Foto do item <small class="recomendado">(Recomendado)</small></label>
+                    <div class="envio-foto">
+                        <span class="envio-icone"><span class="icone">photo_camera</span></span>
+                        <strong>Arraste ou clique para enviar uma foto</strong>
+                        <p id="texto-foto">Formatos aceitos: JPG, PNG até 1MB. Fotos nítidas facilitam muito a identificação do dono.</p>
+                        <label for="foto" class="botao botao-contorno botao-pequeno">
+                            <span class="icone">upload_file</span> Selecionar arquivo do dispositivo
+                        </label>
+                        <input type="file" id="foto" accept="image/png, image/jpeg" hidden>
+                    </div>
+                </div>
+
+                <!-- Orientações -->
+                <div class="aviso aviso-orientacoes">
+                    <span class="formulario-icone"><span class="icone">shield</span></span>
+                    <p>
+                        <strong>Orientações de Segurança Institucional</strong>
+                        Pertences de alto valor ou documentos pessoais encontrados devem ser entregues preferencialmente na
+                        Central de Achados e Perdidos (Bloco Central, Sala 104). Nossa equipe emitirá um protocolo seguro de custódia.
+                    </p>
+                </div>
+
+                <hr class="linha">
+
+                <!-- Botões finais -->
+                <div class="formulario-botoes">
+                    <a href="inicio.html" class="botao botao-contorno">Cancelar</a>
+                    <button type="submit" class="botao botao-principal"><span class="icone">check_circle</span> Salvar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <div>
+            <p class="rodape-titulo">Instituto Federal de Educação, Ciência e Tecnologia</p>
+            <p>© 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.</p>
+        </div>
+        <nav class="rodape-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Guia de Retirada</a>
+            <a href="#">Contato da Reitoria</a>
+        </nav>
+    </footer>
+
+    <!-- JavaScript: primeiro o comum (usado por todas as páginas), depois o da página -->
+    <script src="js/comum.js"></script>
+    <script src="js/cadastrar-item.js"></script>
+
+</body>
+</html>

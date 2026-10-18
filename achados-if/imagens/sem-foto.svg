@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <!-- Imagem usada quando o item foi cadastrado sem foto -->
+    <rect width="400" height="300" fill="#e8f5e9"/>
+    <g fill="none" stroke="#2e7d32" stroke-width="10" stroke-linejoin="round" opacity="0.5">
+        <rect x="140" y="105" width="120" height="90" rx="12"/>
+        <circle cx="200" cy="150" r="24"/>
+        <path d="M170 105 l12 -18 h36 l12 18"/>
+    </g>
+</svg>

@@ -1,0 +1,169 @@
+/* =========================================================
+   PÁGINA DE DETALHES DO ITEM
+   ========================================================= */
+
+.botao-voltar {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+}
+
+/* Duas colunas: fotos (maior) e informações */
+.detalhes {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+
+/* ---------- Coluna das fotos ---------- */
+.detalhes-fotos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cartao-fotos {
+    padding: 14px;
+}
+
+.foto-principal {
+    position: relative;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--verde-claro);
+}
+
+.foto-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-selo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.foto-zoom {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotos-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.miniaturas {
+    display: flex;
+    gap: 8px;
+}
+
+.miniatura {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid transparent;
+}
+
+.miniatura.ativa {
+    border-color: var(--verde-principal);
+}
+
+.miniatura-vazia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde-claro);
+    color: var(--verde-principal);
+}
+
+.registro {
+    text-align: right;
+    font-size: 12px;
+    color: var(--texto-cinza);
+}
+
+.registro .icone {
+    font-size: 14px;
+}
+
+
+/* ---------- Coluna das informações ---------- */
+.detalhes-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.etiquetas {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.item-titulo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.item-texto {
+    color: var(--texto-cinza);
+}
+
+/* Quadro de informações em 2 colunas */
+.info-grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 4px 0 6px;
+}
+
+.info-caixa {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--verde-borda);
+    border-radius: 10px;
+    background-color: var(--verde-fundo);
+}
+
+.info-caixa .icone {
+    color: var(--verde-principal);
+}
+
+.info-caixa small {
+    display: block;
+    font-size: 11px;
+    color: var(--texto-cinza);
+}
+
+.info-caixa strong {
+    display: block;
+    font-size: 13px;
+}
+
+/* Caixa que ocupa as 2 colunas */
+.info-caixa-larga {
+    grid-column: span 2;
+}
+
+.aviso-retirada {
+    border-left: 4px solid var(--verde-principal);
+}

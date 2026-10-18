@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Achados IF</title>
+
+    <!-- Fonte Inter e ícones do Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <!-- Estilos: primeiro o global, depois o da página -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="cabecalho-publico">
+        <div class="logo">
+            <div class="logo-icone"><span class="icone">manage_search</span></div>
+            <div>
+                <p class="logo-nome">Achados IF</p>
+                <p class="logo-subtitulo">Rede Federal de Educação</p>
+            </div>
+        </div>
+
+        <nav class="cabecalho-links">
+            <a href="#"><span class="icone">help</span> Ajuda e Suporte</a>
+            <span class="divisor-vertical"></span>
+            <a href="#"><span class="ponto-verde"></span> Portal Oficial IF</a>
+        </nav>
+    </header>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="conteudo area-login">
+
+        <section class="cartao cartao-login">
+
+            <!-- Topo do cartão -->
+            <div class="login-topo">
+                <div class="login-icone"><span class="icone">manage_search</span></div>
+                <h1 class="login-titulo">
+                    Achados IF
+                    <span class="etiqueta">Campus Universitário / IF</span>
+                </h1>
+                <p class="login-subtitulo">Encontre o que foi perdido no campus</p>
+            </div>
+
+            <!-- Formulário de login -->
+            <form action="inicio.html">
+
+                <div class="campo">
+                    <label for="email">E-mail Institucional</label>
+                    <div class="campo-caixa">
+                        <span class="icone">mail</span>
+                        <input type="email" id="email" placeholder="aluno.sobrenome@if.edu.br">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="campo-caixa">
+                        <span class="icone">lock</span>
+                        <input type="password" id="senha" placeholder="••••••••">
+                        <span class="icone">visibility</span>
+                    </div>
+                </div>
+
+                <div class="login-opcoes">
+                    <label class="lembrar">
+                        <input type="checkbox"> Lembrar de mim
+                    </label>
+                    <a href="#" class="link-forte">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="botao botao-principal botao-largo">
+                    Entrar <span class="icone">arrow_forward</span>
+                </button>
+            </form>
+
+            <hr class="linha">
+
+            <p class="texto-centro">
+                Não tem conta? <a href="cadastro.html" class="link-forte">Criar conta</a>
+            </p>
+
+            <div class="aviso">
+                <span class="icone">verified_user</span>
+                <p>Acesso seguro institucional para estudantes, servidores e colaboradores</p>
+            </div>
+        </section>
+
+        <!-- Informações abaixo do cartão -->
+        <div class="login-info">
+            <span><span class="icone">location_on</span> Achados &amp; Perdidos - Bloco Central</span>
+            <span>•</span>
+            <span><span class="icone">schedule</span> Atendimento: 08h às 18h</span>
+        </div>
+    </main>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape">
+        <p>© 2024 Instituto Federal - Sistema Institucional de Achados e Perdidos. Todos os direitos reservados.</p>
+        <nav class="rodape-links">
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Guia de Retirada</a>
+            <a href="#">Contato da Reitoria</a>
+        </nav>
+    </footer>
+
+    <!-- JavaScript: primeiro o comum (usado por todas as páginas), depois o da página -->
+    <script src="js/comum.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>
